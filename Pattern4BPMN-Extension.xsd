@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns="http://pattern.org/pattern4bpmn"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://policy.org/pattern4bpmn"
+        xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.omg.org/spec/BPMN/20100524/MODEL" schemaLocation="Semantic.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            This XML Schema defines and documents BPMN 2.0 extension elements and
+            attributes introduced to support the modeling of Patterns and Pattern Spheres.
+        </xsd:documentation>
+    </xsd:annotation>
+
+
+    <xsd:element name="biasedInitialStatePattern" type="tBiasedInitialStatePattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tBiasedInitialStatePattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that warm-starting using biased initial state should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="chainedOptimizationPattern" type="tChainedOptimizationPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tChainedOptimizationPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that warm-starting using chained optimization should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="circuitCuttingPattern" type="tCircuitCuttingPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tCircuitCuttingPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that circuit cutting should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="errorCorrectionPattern" type="tErrorCorrectionPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tErrorCorrectionPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that error correction should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="gateErrorMitigationPattern" type="tGateErrorMitigationPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tGateErrorMitigationPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that gate error mitigation should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="orchestratedExecutionPattern" type="tOrchestratedExecutionPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tOrchestratedExecutionPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that the corresponding programs should be orchestrated as a workflow.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="preDeployedExecutionPattern" type="tPreDeployedExecutionPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tPreDeployedExecutionPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that the corresponding programs should be pre-deployed, e.g., in a hybrid runtime.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType> 
+
+    <xsd:element name="preTrainedFeatureExtractorPattern" type="tPreTrainedFeatureExtractorPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tPreTrainedFeatureExtractorPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that warm-starting using a pre-trained feature extractor should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="prioritizedExecutionPattern" type="tPrioritizedExecutionPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tPrioritizedExecutionPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that quantum circuits should be executed using prioritized access.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="quantumHardwareSelectionPattern" type="tQuantumHardwareSelectionPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tQuantumHardwareSelectionPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that quantum hardware selection should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="readoutErrorMitigationPattern" type="tReadoutErrorMitigationPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tReadoutErrorMitigationPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that readout error mitigation should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="variationalParameterTransferPattern" type="tVariationalParameterTransferPattern" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tVariationalParameterTransferPattern">
+        <xsd:annotation>
+            <xsd:documentation>
+                Pattern to specify that warm-starting using a variational parameter transfer should be applied.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
+
+    <xsd:element name="patternSphere" type="tPatternSphere" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tPatternSphere">
+        <xsd:annotation>
+            <xsd:documentation>
+                Extension of the BPMN subprocess that is used for attaching patterns to a set of tasks contained within the subprocess.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tSubProcess">
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

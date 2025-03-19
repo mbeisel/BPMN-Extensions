@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns="http://policy.org/policy4bpmn"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://policy.org/policy4bpmn"
+        xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.omg.org/spec/BPMN/20100524/MODEL" schemaLocation="Semantic.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation>
+            This XML Schema defines and documents BPMN 2.0 extension elements and
+            attributes introduced to support the modeling of Policies.
+        </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:element name="onDemandPolicy" type="tOnDemandPolicy" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tOnDemandPolicy">
+        <xsd:annotation>
+            <xsd:documentation>
+                Policy type to define that a service should be deployed on demand.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+                <xsd:attribute name="onDemand" type="xsd:boolean" default="true" use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="locationPolicy" type="tLocationPolicy" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tLocationPolicy">
+        <xsd:annotation>
+            <xsd:documentation>
+                Policy type to define in what region a service should be deployed.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+                <xsd:attribute name="location" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="dedicatedHostingPolicy" type="tDedicatedHostingPolicy" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tDedicatedHostingPolicy">
+        <xsd:annotation>
+            <xsd:documentation>
+                Policy type to define whether a service shall be deployed with a dedicated instance or not.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+                <xsd:attribute name="dedicatedHosting" type="xsd:boolean" default="true" use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="cloudTypePolicy" type="tCloudTypePolicy" substitutionGroup="bpmn:flowElement"/>
+    <xsd:complexType name="tCloudTypePolicy">
+        <xsd:annotation>
+            <xsd:documentation>
+                Policy type to define what infrastructure shall be used to deploy a service, e.g. a public or private cloud.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="bpmn:tFlowNode">
+                <xsd:attribute name="cloudType" type="xsd:string" use="required"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>
